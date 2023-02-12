@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-kpb=!*@g7%l5hjvch!1h)48hx!^_jnae4*kwcmi&f%(a!5+2!7'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,9 +86,8 @@ DATABASES = {
 }
 
 
-STRIPE_pUBLISHABLE_KEY = 'pk_test_51MaZiWD1R2u7ntZkYubGwryUdhQhqmvD12Swrew9n1HiGuVSFsBuak4mIZ4MPDPkBszwhlqjfAw34nOC1NEK53x500ZKPGa51q'
-STRIPE_SECRET_KEY = 'sk_test_51MaZiWD1R2u7ntZkAHD2pBs6TxlkAfTi9arUDjObC9ddkC4jjKEwXum2XBbN3Ca8gVeAN82Fo7nXcIMXwSmqrQuX000rGMD2Sx'
-
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

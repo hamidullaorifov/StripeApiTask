@@ -20,15 +20,7 @@ def create_payment_session(request,id):
     line_items=[{
         'price': price,
         'quantity':1
-        # 'currency': 'usd',
-        
     }],
-    # payment_intent_data={
-    #     'application_fee_amount': 123,
-    #     # 'transfer_data': {
-    #     # 'destination': '{{CONNECTED_ACCOUNT_ID}}',
-    #     # },
-    # },
     mode='payment',
     success_url='http://localhost:8000/buy/success/',
     cancel_url=f'http://localhost:8000/item/{item.pk}',

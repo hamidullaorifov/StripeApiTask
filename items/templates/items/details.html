@@ -13,7 +13,7 @@
         <p>{{ item.price }}</p>
         <button id="buy-button">Buy</button>
         <script type="text/javascript">
-            var stripe = Stripe('pk_test_51MaZiWD1R2u7ntZkYubGwryUdhQhqmvD12Swrew9n1HiGuVSFsBuak4mIZ4MPDPkBszwhlqjfAw34nOC1NEK53x500ZKPGa51q');
+            var stripe = Stripe('{{stripe_key}}');
 
             var buyButton = document.getElementById('buy-button');
             buyButton.addEventListener('click', function() {
