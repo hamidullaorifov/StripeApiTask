@@ -116,3 +116,7 @@ Source:djangowaves.com
 17
 what all should be added to gitignore for django projectShell/Bash By EmmanuelRaj on Jan 12 2021 ThankCommentSuggest EditShare
 # Django #
+
+
+
+.vscode
