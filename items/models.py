@@ -25,8 +25,8 @@ class Tax(models.Model):
 
 
 class Order(models.Model):
-    tax = models.ForeignKey(Tax,on_delete=models.SET_DEFAULT,default=Tax())
-    discount = models.ForeignKey(Discount,on_delete=models.SET_DEFAULT,default=Discount())
+    tax = models.ForeignKey(Tax,on_delete=models.SET_NULL)
+    discount = models.ForeignKey(Discount,on_delete=models.SET_NULL)
     def get_total(self):
         total_items_sum = sum([item.get_total_price() for item in self.items.all()])
         if self.discount.type == 'percentage':
