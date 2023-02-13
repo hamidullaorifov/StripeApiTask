@@ -15,7 +15,7 @@ class Item(models.Model):
 
 
 class Discount(models.Model):
-    value = models.IntegerField(max_digits=10,decimal_places=2,default=0)
+    value = models.DecimalField(max_digits=10,decimal_places=2,default=0)
     type = models.CharField(max_length=10,choices=(
         ('percentage','Persentage'),('fixed','Fixed amount')),default='percentage')
 
@@ -25,8 +25,8 @@ class Tax(models.Model):
 
 
 class Order(models.Model):
-    tax = models.ForeignKey(Tax,on_delete=models.SET_DEFAULT)
-    discount = models.ForeignKey(Discount,on_delete=models.SET_DEFAULT)
+    tax = models.ForeignKey(Tax,on_delete=models.SET_DEFAULT,default=Tax())
+    discount = models.ForeignKey(Discount,on_delete=models.SET_DEFAULT,default=Discount())
     def get_total(self):
         total_items_sum = sum([item.get_total_price() for item in self.items.all()])
         if self.discount.type == 'percentage':
