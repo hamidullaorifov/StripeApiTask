@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Item
+from .models import Item,Order,OrderItem,Discount,Tax
 from django.conf import settings
 from django.http import JsonResponse
 from django.conf import settings
@@ -50,6 +50,7 @@ def create_checkout_session(request):
         data = json.loads(body)
         orders = data.get('orders',[])
         line_items = []
+        
         for order in orders:
             item = get_object_or_404(Item,id=order['id'])
             product = stripe.Product.create(name=item.name)
