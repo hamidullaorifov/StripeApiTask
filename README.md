@@ -14,9 +14,8 @@ Steps to run
 
 - `git clone https://github.com/hamidullaorifov/StripeApiTask`
 - `cd StripeApiTask`
-- `python manage.py makemigrations`
-- `python manage.py migrate`
-- `docker-compose up`
+- `docker-compose up -d`
+- `docker-compose exec web python manage.py migrate`
 
 
 ### Without docker
