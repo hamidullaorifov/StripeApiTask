@@ -14,7 +14,6 @@
         <button id="buy-button">Buy</button>
         <script type="text/javascript">
             var stripe = Stripe('{{stripe_key}}');
-
             var buyButton = document.getElementById('buy-button');
             buyButton.addEventListener('click', function() {
                 fetch('/buy/{{item.id}}', {method: 'GET'})
