@@ -25,6 +25,7 @@ Steps to run
 - `git clone https://github.com/hamidullaorifov/StripeApiTask`
 - `cd StripeApiTask`
 - create `.env` file and write Environment variables
+- create virtual environment (optional) `python -m venv env`
 - `pip install -r requirements.txt`
 - `python manage.py makemigrations`
 - `python manage.py migrate` 
