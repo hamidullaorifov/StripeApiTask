@@ -1,6 +1,5 @@
 **python version - 3.11.0**
 
-Link: *http://hamidulla.pythonanywhere.com/*
 
 
 #### Requirements
